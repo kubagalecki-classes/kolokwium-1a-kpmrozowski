@@ -1,4 +1,5 @@
 #include "catch.hpp"
+#include<iostream>
 
 // Zad2
 // tutaj definicja klasy Makaron
@@ -26,23 +27,16 @@ private:
     static const double C;
 
 public:
-    Tagliatelle();
-    Tagliatelle(double, double, double);
-    ~Tagliatelle();
-
+		Tagliatelle(double a, double b, double c) :L(a), W(b), R(c) {}
+    Tagliatelle() {
+			L = 0.5;
+			W = 0.5;
+			R = 0.5;
+		}
+    ~Tagliatelle() {}
+		
     double ileMaki(unsigned P) const override;
-
 };
-
-Tagliatelle::Tagliatelle() {
-    L = 0.5;
-    W = 0.5;
-    R = 0.5;
-}
-
-Tagliatelle::Tagliatelle(double a, double b, double c) :L(a), W(b), R(c) {}
-
-Tagliatelle::~Tagliatelle() {}
 
 double Tagliatelle::ileMaki(unsigned P) const {
     return P * L * W *(1. - R) * C;

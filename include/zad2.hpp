@@ -4,31 +4,49 @@
 #include <string>
 #include <type_traits>
 
-#include <iostream>
-
 // tutaj klasa Penne
 
 class Penne : public Makaron {
-public:
-    Penne() = default;
-    ~Penne() = default;
-    double ileMaki(unsigned P) const override;
+  public:
+  double ileMaki(unsigned P) const {return(double) P;};
 };
-
-double Penne::ileMaki(unsigned P) const{
-    return P;
-}
 
 // tutaj definicja metody gotujMakaron
 
-Makaron* Makaron::gotujMakaron(std::string& str)
+Makaron* Makaron::gotujMakaron(const string& makaron) {
+    if (makaron.front() == makaron.back())
+        return new Tagliatelle(3.14, 0.42, 0.1);
+    else 
+        return new Penne;
+};
+
+
+
+
+#include "zad1.hpp"
+
+#include <memory>
+#include <string>
+#include <type_traits>
+
+// tutaj klasa Penne
+
+// tutaj definicja metody gotujMakaron
+
+class Penne : public Makaron
 {
-    if (str.front() == str.back()) {
-        Tagliatelle * obj = new Tagliatelle(3.14, 0.42, 0.1);
-        return obj;
-    }
-    else {
-        Penne* obj = new Penne();
-        return obj;
-    }
-}
+  public:
+  double ileMaki(unsigned P) const {return(double) P;};
+};
+
+Makaron* Makaron::gotujMakaron(const string& makaron)
+{
+   
+    if (makaron.front() == makaron.back())
+    
+        return new Tagliatelle(3.14, 0.42, 0.1);
+   
+    else 
+        return new Penne;
+
+};
