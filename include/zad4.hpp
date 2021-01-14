@@ -23,5 +23,6 @@ double obliczMake(const std::vector<Tagliatelle>& vec) {
     }
     catch(int & e) {}
 
-    catch (double& e) {}
+    catch (double& e) {
+    }
 }
