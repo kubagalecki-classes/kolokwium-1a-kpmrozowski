@@ -5,5 +5,7 @@
 #include <type_traits>
 
 // tutaj klasa Penne
+class Makaron {
 
+};
 // tutaj definicja metody gotujMakaron
