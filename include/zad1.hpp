@@ -48,7 +48,5 @@ double Tagliatelle::ileMaki(unsigned P) const {
     return P * L * W *(1. - R) * C;
 }
 
-const double Tagliatelle::C = 0;
-
 
 
