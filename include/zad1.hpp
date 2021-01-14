@@ -6,25 +6,44 @@
 
 // Zad1
 // tutaj definicja klasy Tagliatelle
-class Makaron
+class Tagliatelle
 {
-  public:
-    virtual double ileMaki(unsigned) = 0;
-    
-};
+public:
+    Tagliatelle();
+    Tagliatelle(double, double, double);
+    ~Tagliatelle();
 
-class Tagliatelle : public Makaron {
- private:
- double L;
- double W;
- double R;
- static const double C;
+public:
+    double ileMaki(unsigned P) const;
 
- public:
- Tagliatelle(double a, double b, double c) : L{a}, W{b}, R{C} {}
- Tagliatelle() : L{0.5}, W{0.5}, R{0.5} {}
- double ileMaki(unsigned P) const {
-	 return P * L * W * (1. - R) * C;
- }
+private:
+    double L;
+    double W;
+    double R;
+
+    static const double C;
 
 };
+
+Tagliatelle::Tagliatelle()
+{
+    L = 0.5;
+    W = 0.5;
+    R = 0.5;
+}
+
+Tagliatelle::Tagliatelle(double a, double b, double c) :L(a), W(b), R(c)
+{
+}
+
+Tagliatelle::~Tagliatelle()
+{
+}
+
+double Tagliatelle::ileMaki(unsigned P) const
+{
+    return P * L * W *(1. - R) * C;
+}
+
+
+
