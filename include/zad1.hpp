@@ -6,7 +6,14 @@
 
 // Zad1
 // tutaj definicja klasy Tagliatelle
-class Tagliatelle {
+class Makaron
+{
+  public:
+    virtual double ileMaki(unsigned) = 0;
+    
+};
+
+class Tagliatelle : public Makaron
  private:
  double L;
  double W;
@@ -19,6 +26,5 @@ class Tagliatelle {
  double ileMaki(unsigned P) const {
 	 return P * L * W * (1. - R) * C;
  }
-
 
 };
