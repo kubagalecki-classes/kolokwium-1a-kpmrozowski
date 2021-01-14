@@ -13,7 +13,7 @@ class Makaron
     
 };
 
-class Tagliatelle : public Makaron
+class Tagliatelle : public Makaron {
  private:
  double L;
  double W;
